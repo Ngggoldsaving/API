@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 module.exports = async function scrapeGold() {
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: '/usr/bin/chromium-browser', // ← จุดสำคัญ
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   });
 
